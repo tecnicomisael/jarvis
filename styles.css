@@ -575,36 +575,15 @@ body {
 }
 
 /* ElevenLabs Widget - Hide popup but keep functionality */
+/* ElevenLabs Widget - invisível mas funcional */
 elevenlabs-convai {
     position: fixed;
-    bottom: -1000px !important;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -9999 !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    visibility: hidden !important;
-    transition: none !important;
-    width: 0 !important;
-    height: 0 !important;
-    overflow: hidden !important;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0.01; /* invisível */
+    z-index: 9999;
+    pointer-events: auto; /* 🔥 ESSENCIAL */
 }
-
-elevenlabs-convai.active {
-    bottom: -1000px !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    visibility: hidden !important;
-    width: 0 !important;
-    height: 0 !important;
-    overflow: hidden !important;
-}
-
-/* Hide any child elements that might show */
-elevenlabs-convai * {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
 }
 
 /* Animations */

@@ -30,6 +30,12 @@ class JARVISInterface {
     setupEventListeners() {
         // Voice button click - now triggers ElevenLabs widget
         this.voiceButton.addEventListener('click', () => {
+			const widget = document.querySelector('elevenlabs-convai');
+
+    if (widget) {
+        widget.click(); // 🔥 dispara o widget
+    }
+});
             this.triggerElevenLabsWidget();
         });
     }
