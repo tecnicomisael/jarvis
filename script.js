@@ -1,12 +1,35 @@
-const button = document.getElementById('voiceButton');
-const status = document.getElementById('status');
+class JARVISInterface {
+    constructor() {
+        this.voiceButton = document.getElementById('voiceButton');
+        this.voiceStatus = document.getElementById('voiceStatus');
 
-button.addEventListener('click', () => {
+        this.setupEventListeners();
+    }
 
-    status.innerText = "Ativando...";
+    setupEventListeners() {
+        this.voiceButton.addEventListener('click', () => {
 
-    setTimeout(() => {
-        status.innerText = "Fale com o JARVIS";
-    }, 1000);
+            this.updateVoiceButtonState('listening');
+            this.updateVoiceStatus('Use o widget no canto para falar');
 
+            setTimeout(() => {
+                this.updateVoiceButtonState('idle');
+                this.updateVoiceStatus('SISTEMA ATIVO');
+            }, 2000);
+
+        });
+    }
+
+    updateVoiceButtonState(state) {
+        this.voiceButton.className = `voice-button ${state}`;
+    }
+
+    updateVoiceStatus(text) {
+        const el = this.voiceStatus.querySelector('.status-text');
+        el.textContent = text;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    new JARVISInterface();
 });

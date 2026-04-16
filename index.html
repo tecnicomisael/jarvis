@@ -6,29 +6,51 @@
 <title>JARVIS - Sistema de Inteligência Artificial</title>
 
 <link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
 <div class="hud-container">
 
-<div class="center">
+    <div class="grid-background"></div>
 
-<h1 class="title">JARVIS</h1>
+    <!-- CENTRO -->
+    <div class="hud-panel center">
 
-<button id="voiceButton" class="voice-button">
-🎤
-</button>
+        <div class="hologram-container">
+            <img src="hologram.gif" class="hologram-gif">
+            <div class="jarvis-label">
+                <h1>JARVIS</h1>
+                <div class="label-line"></div>
+            </div>
+        </div>
 
-<div id="status">Clique para ativar o JARVIS</div>
+        <div class="voice-controls">
+            <button class="voice-button" id="voiceButton">
+                🎤
+            </button>
+
+            <div class="voice-status" id="voiceStatus">
+                <div class="status-text">SISTEMA ATIVO</div>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="message jarvis-message">
+                <div class="message-content">
+                    <p>JARVIS ONLINE.</p>
+                    <span class="message-time">INICIADO</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 </div>
 
-</div>
-
-<!-- ElevenLabs Widget -->
-<div class="elevenlabs-container">
+<!-- ✅ ElevenLabs FUNCIONAL -->
+<div class="elevenlabs-wrapper">
     <elevenlabs-convai agent-id="agent_4501kp4d8f9tf8badzxabr3yh2dy"></elevenlabs-convai>
 </div>
 

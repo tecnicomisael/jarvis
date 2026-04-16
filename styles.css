@@ -42,3 +42,28 @@ body {
     bottom: 20px;
     right: 20px;
 }
+/* =========================
+   FIX ELEVENLABS (IMPORTANTE)
+========================= */
+
+/* REMOVE QUALQUER BLOQUEIO ANTIGO */
+elevenlabs-convai {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+
+    transform: scale(0.9);
+}
+
+/* container seguro */
+.elevenlabs-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
